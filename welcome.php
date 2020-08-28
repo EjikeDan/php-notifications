@@ -26,11 +26,11 @@ echo $_SESSION["username"];
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#"><h1>Welcome, <?php echo $_REQUEST['username'];?></h1></a>
+      <a class="navbar-brand" href="#"><p>Welcome, <?php echo $_REQUEST['username'];?></p></a>
     </div>
     
     <ul class="nav navbar-nav navbar-right">
-      <li><h2><span class="glyphicon glyphicon-user"></span> Last Login: 
+      <li><p><span class="glyphicon glyphicon-user"></span> Last Login: 
 <?php
 include("database.php");
 
@@ -40,7 +40,7 @@ $rs=mysqli_query($con,"select last_login from user where username = '$user'");
 $row=mysqli_fetch_row($rs);
 echo $row[0];
 ?>
-      </h2></li>
+      </p></li>
       <li><a href="signout.php?username=<?php echo $_REQUEST['username']; ?>"> <span class="glyphicon glyphicon-log-in"></span> Log out</a></li>
     </ul>
   </div>
